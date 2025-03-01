@@ -2,7 +2,7 @@
 // In a real app, you'd import actual images
 export const images = Array.from({ length: 10 }, (_, i) => ({
   id: `image${i + 1}`,
-  src: `https://via.placeholder.com/300?text=Image+${i + 1}`
+  src: `https://place-hold.it/200x200.jpg&text=${i + 1}`
 }));
 
 // Fisher-Yates shuffle algorithm to randomize image order

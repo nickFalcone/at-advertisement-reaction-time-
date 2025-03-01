@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { AppState, TestResult, ArrowPress } from '../types';
 import { saveResults, getResults, clearResults } from '../utils/storage';
 import { downloadCSV } from '../utils/csv';
-import { shuffleImages, getRandomDelay } from '../utils/imageUtils';
+import { shuffleImages, getRandomDelay } from '../utils/image';
 
 export const useReactionTest = () => {
   const [state, setState] = useState<AppState>('start');
