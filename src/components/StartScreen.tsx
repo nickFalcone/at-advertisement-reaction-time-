@@ -7,11 +7,14 @@ interface StartScreenProps {
 
 const StartScreen: React.FC<StartScreenProps> = ({ onStart, hasPartialResults }) => {
   return (
-    <div className="start-screen" style={{ textAlign: 'center' }}>
+    <div className="start-screen">
       <h1>Reaction Time Test</h1>
+      <p>After clicking start, focus on the cross. You will see a series of images appear.</p>
+      <p>As soon as you see an image appear, press the up arrow or down arrow on your keyboard.</p>
       {hasPartialResults && (
-        <p>You have incomplete test data. Starting will create a new test.</p>
+        <em>You have incomplete test data. Starting will create a new test.</em>
       )}
+      <p></p>
       <button 
         onClick={onStart}
         style={{

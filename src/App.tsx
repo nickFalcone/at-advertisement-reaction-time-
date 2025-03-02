@@ -3,7 +3,7 @@ import { useReactionTest } from './hooks/useReactionTest';
 import StartScreen from './components/StartScreen';
 import TestScreen from './components/TestScreen';
 import CompleteScreen from './components/CompleteScreen';
-import './App.css';
+import './app.css';
 
 const App: React.FC = () => {
   const { 
