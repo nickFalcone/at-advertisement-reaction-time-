@@ -1,9 +1,18 @@
-// Create an array of 10 placeholder image paths
-// In a real app, you'd import actual images
-export const images = Array.from({ length: 10 }, (_, i) => ({
-  id: `image${i + 1}`,
-  src: `https://place-hold.it/400x400.jpg&text=${i + 1}`
-}));
+// Add typings for Vite's import.meta.glob
+/// <reference types="vite/client" />
+
+// Use Vite's import.meta.glob to load images
+const imageModules = import.meta.glob('../images/*.jpg', { eager: true });
+
+// Create an array of image objects from the modules
+export const images = Object.entries(imageModules).map(([path, module]) => {
+  // Extract image number from path (e.g., "../images/12.jpg" -> "12")
+  const id = path.split('/').pop()?.replace('.jpg', '') || '';
+  return {
+    id: `image${id}`,
+    src: (module as any).default
+  };
+});
 
 // Fisher-Yates shuffle algorithm to randomize image order
 export const shuffleImages = () => {

@@ -28,7 +28,6 @@ const App: React.FC = () => {
       {state === 'start' && (
         <StartScreen 
           onStart={startTest} 
-          hasPartialResults={results.length > 0 && results.length < 10} 
         />
       )}
       

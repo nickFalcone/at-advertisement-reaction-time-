@@ -2,10 +2,10 @@ import React from 'react';
 
 interface StartScreenProps {
   onStart: () => void;
-  hasPartialResults: boolean;
+  hasPartialResults?: boolean;
 }
 
-const StartScreen: React.FC<StartScreenProps> = ({ onStart, hasPartialResults }) => {
+const StartScreen: React.FC<StartScreenProps> = ({ onStart, hasPartialResults = false }) => {
   return (
     <div className="start-screen">
       <h1>Reaction Time Test</h1>

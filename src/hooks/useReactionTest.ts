@@ -5,8 +5,13 @@ import { downloadCSV } from '../utils/csv';
 import { shuffleImages, getRandomDelay } from '../utils/image';
 
 export const useReactionTest = () => {
+  // Clear any partial results on initial load
+  useEffect(() => {
+    clearResults();
+  }, []);
+
   const [state, setState] = useState<AppState>('start');
-  const [results, setResults] = useState<TestResult[]>(getResults());
+  const [results, setResults] = useState<TestResult[]>([]);
   const [currentTrial, setCurrentTrial] = useState<number>(0);
   const [isImageShown, setIsImageShown] = useState<boolean>(false);
   const [shuffledImages, setShuffledImages] = useState(shuffleImages());
@@ -95,17 +100,6 @@ export const useReactionTest = () => {
     clearResults();
     setState('start');
   }, [results]);
-
-  // Resume test if page was refreshed during a test
-  useEffect(() => {
-    const storedResults = getResults();
-    if (storedResults.length > 0 && storedResults.length < 10 && state === 'start') {
-      setResults(storedResults);
-      setCurrentTrial(storedResults.length);
-      // You could choose to auto-resume here if desired
-      // Or let the user restart from the beginning
-    }
-  }, [state]);
 
   return {
     state,

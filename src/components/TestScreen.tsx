@@ -12,13 +12,13 @@ const TestScreen: React.FC<TestScreenProps> = ({ isImageShown, currentImage }) =
       display: 'flex', 
       justifyContent: 'center', 
       alignItems: 'center',
-      height: '300px'
+      height: '550px'
     }}>
       {isImageShown && currentImage ? (
         <img 
           src={currentImage.src} 
           alt={currentImage.id} 
-          style={{ maxHeight: '300px', maxWidth: '300px' }}
+          style={{ maxHeight: '550px', maxWidth: '550px' }}
         />
       ) : (
         <CrossDisplay />
