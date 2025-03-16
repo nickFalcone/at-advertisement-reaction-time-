@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { AppState, TestResult, ArrowPress } from '../types';
-import { saveResults, getResults, clearResults } from '../utils/storage';
+import { saveResults, clearResults } from '../utils/storage';
 import { downloadCSV } from '../utils/csv';
 import { shuffleImages, getRandomDelay } from '../utils/image';
 

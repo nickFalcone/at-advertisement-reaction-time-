@@ -9,7 +9,6 @@ const App: React.FC = () => {
   const { 
     state, 
     startTest, 
-    results, 
     isImageShown, 
     currentImage, 
     exportResults 
